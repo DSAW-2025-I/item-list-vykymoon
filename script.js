@@ -53,3 +53,8 @@ function updateCartSummary() {
     document.getElementById('cart-count').textContent = cartCount;
     document.getElementById('cart-total').textContent = `$${totalPrice.toFixed(2)}`;
 }
+
+function confirmOrder() {
+    let confirmationMessage = document.getElementById("order-confirmation");
+    confirmationMessage.style.display = "block"; 
+}
