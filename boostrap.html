@@ -1,20 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <title>Bootstrap | Product List With Cart</title>
-  
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca:wght@400&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desserts Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdf7f2;
+        }
+        .container-wrapper {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .product-card img {
+            border-radius: 10px;
+        }
+        .cart-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+        }
+    </style>
 </head>
-<body>
-
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+  <body>
+      <div class="container mt-5">
+          <div class="container-wrapper p-4">
+              <h1 class="mb-4">Desserts</h1>
+              <div class="row">
+                  <div class="col-md-8">
+                      <div class="row">
+                        <div class="col-md-4 mb-3">
+                          <div class="card product-card">
+                              <img src="assets/image-waffle-desktop.jpg" class="card-img-top" alt="Waffle with Berries">
+                              <div class="card-body text-center">
+                                  <h5 class="card-title">Waffle with Berries</h5>
+                                  <p class="card-text">$6.50</p>
+                                  <div class="d-flex justify-content-center align-items-center">
+                                      <button class="btn btn-outline-danger btn-sm" onclick="decrement(this)">-</button>
+                                      <span class="mx-2 quantity">1</span>
+                                      <button class="btn btn-outline-success btn-sm" onclick="increment(this)">+</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                          <div class="col-md-4 mb-4">
+                              <div class="card product-card">
+                                  <img src="assets/image-creme-brulee-desktop.jpg" class="card-img-top" alt="Vanilla Bean Crème Brûlée">
+                                  <div class="card-body text-center">
+                                      <h5 class="card-title">Vanilla Bean Crème Brûlée</h5>
+                                      <p class="card-text">$7.00</p>
+                                      <button class="btn btn-primary">Add to Cart</button>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-4 mb-4">
+                              <div class="card product-card">
+                                  <img src="assets/image-macaron-desktop.jpg" class="card-img-top" alt="Macaron Mix of Five">
+                                  <div class="card-body text-center">
+                                      <h5 class="card-title">Macaron Mix of Five</h5>
+                                      <p class="card-text">$8.00</p>
+                                      <button class="btn btn-primary">Add to Cart</button>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-4 mb-4">
+                              <div class="card product-card">
+                                  <img src="assets/image-tiramisu-desktop.jpg" class="card-img-top" alt="Classic Tiramisu">
+                                  <div class="card-body text-center">
+                                      <h5 class="card-title">Classic Tiramisu</h5>
+                                      <p class="card-text">$5.50</p>
+                                      <button class="btn btn-primary">Add to Cart</button>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-4 mb-4">
+                              <div class="card product-card">
+                                  <img src="assets/image-baklava-desktop.jpg" class="card-img-top" alt="Pistachio Baklava">
+                                  <div class="card-body text-center">
+                                      <h5 class="card-title">Pistachio Baklava</h5>
+                                      <p class="card-text">$4.00</p>
+                                      <button class="btn btn-primary">Add to Cart</button>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-4 mb-4">
+                              <div class="card product-card">
+                                  <img src="assets/image-meringue-desktop.jpg" class="card-img-top" alt="Lemon Meringue Pie">
+                                  <div class="card-body text-center">
+                                      <h5 class="card-title">Lemon Meringue Pie</h5>
+                                      <p class="card-text">$5.00</p>
+                                      <button class="btn btn-primary">Add to Cart</button>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-4 mb-4">
+                            <div class="card product-card">
+                                <img src="assets/image-cake-desktop.jpg" class="card-img-top" alt="Lemon Meringue Pie">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Lemon Meringue Pie</h5>
+                                    <p class="card-text">$5.00</p>
+                                    <button class="btn btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                          <div class="card product-card">
+                              <img src="assets/image-brownie-desktop.jpg" class="card-img-top" alt="Lemon Meringue Pie">
+                              <div class="card-body text-center">
+                                  <h5 class="card-title">Lemon Meringue Pie</h5>
+                                  <p class="card-text">$5.00</p>
+                                  <button class="btn btn-primary">Add to Cart</button>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-4 mb-4">
+                            <div class="card product-card">
+                                <img src="assets/image-panna-cotta-desktop.jpg" class="card-img-top" alt="Lemon Meringue Pie">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Lemon Meringue Pie</h5>
+                                    <p class="card-text">$5.00</p>
+                                    <button class="btn btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                      
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                  
+                    <div class="cart-card p-3">
+                      <h2 class="text-center mb-3">Your Cart (<span id="cart-count">7</span>)</h2>
+                      <ul class="list-group mb-3" id="cart-items">
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <span class="cart-item-name">Classic Tiramisu</span>
+                              <div class="d-flex align-items-center">
+                                  <button class="btn btn-outline-danger btn-sm px-2" onclick="updateCartQuantity(this, -1)">−</button>
+                                  <span class="mx-2 cart-quantity">1</span>
+                                  <button class="btn btn-outline-success btn-sm px-2" onclick="updateCartQuantity(this, 1)">+</button>
+                              </div>
+                              <span class="cart-item-price">$5.50</span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <span class="cart-item-name">Vanilla Bean Crème Brûlée</span>
+                              <div class="d-flex align-items-center">
+                                  <button class="btn btn-outline-danger btn-sm px-2" onclick="updateCartQuantity(this, -1)">−</button>
+                                  <span class="mx-2 cart-quantity">4</span>
+                                  <button class="btn btn-outline-success btn-sm px-2" onclick="updateCartQuantity(this, 1)">+</button>
+                              </div>
+                              <span class="cart-item-price">$28.00</span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <span class="cart-item-name">Vanilla Panna Cotta</span>
+                              <div class="d-flex align-items-center">
+                                  <button class="btn btn-outline-danger btn-sm px-2" onclick="updateCartQuantity(this, -1)">−</button>
+                                  <span class="mx-2 cart-quantity">2</span>
+                                  <button class="btn btn-outline-success btn-sm px-2" onclick="updateCartQuantity(this, 1)">+</button>
+                              </div>
+                              <span class="cart-item-price">$13.00</span>
+                          </li>
+                      </ul>
+                      <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                          <h4>Total:</h4>
+                          <h4 class="text-success" id="cart-total">$46.50</h4>
+                      </div>
+                      <button class="btn btn-success w-100 mt-3" onclick="confirmOrder()">Confirm Order</button>
+                      <p id="order-confirmation" class="text-center text-success mt-3 fw-bold" style="display: none;">
+                          ✅ Order Confirmed! Thank you for your purchase.
+                      </p>
+                  </div>
+                  
+                  
+                  
+                  </div>
+              </div>
+          </div>
+      </div>
+  </body>
+  </html>
