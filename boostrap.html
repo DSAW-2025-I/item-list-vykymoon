@@ -133,22 +133,45 @@
                   </div>
                   <div class="col-md-4">
                   
-                      <div class="cart-card">
-                          <h2>Your Cart (7)</h2>
-                          <ul class="list-group mb-3">
-                              <li class="list-group-item d-flex justify-content-between">
-                                  <span>Classic Tiramisu</span> <span>1x $5.50</span>
-                              </li>
-                              <li class="list-group-item d-flex justify-content-between">
-                                  <span>Vanilla Bean Crème Brûlée</span> <span>4x $28.00</span>
-                              </li>
-                              <li class="list-group-item d-flex justify-content-between">
-                                  <span>Vanilla Panna Cotta</span> <span>2x $13.00</span>
-                              </li>
-                          </ul>
-                          <h4>Total: No lo pide la rubrica</h4>
-                          <button class="btn btn-success w-100">Confirm Order</button>
+                    <div class="cart-card p-3">
+                      <h2 class="text-center mb-3">Your Cart (<span id="cart-count">7</span>)</h2>
+                      <ul class="list-group mb-3" id="cart-items">
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <span class="cart-item-name">Classic Tiramisu</span>
+                              <div class="d-flex align-items-center">
+                                  <button class="btn btn-outline-danger btn-sm px-2" onclick="updateCartQuantity(this, -1)">−</button>
+                                  <span class="mx-2 cart-quantity">1</span>
+                                  <button class="btn btn-outline-success btn-sm px-2" onclick="updateCartQuantity(this, 1)">+</button>
+                              </div>
+                              <span class="cart-item-price">$5.50</span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <span class="cart-item-name">Vanilla Bean Crème Brûlée</span>
+                              <div class="d-flex align-items-center">
+                                  <button class="btn btn-outline-danger btn-sm px-2" onclick="updateCartQuantity(this, -1)">−</button>
+                                  <span class="mx-2 cart-quantity">4</span>
+                                  <button class="btn btn-outline-success btn-sm px-2" onclick="updateCartQuantity(this, 1)">+</button>
+                              </div>
+                              <span class="cart-item-price">$28.00</span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <span class="cart-item-name">Vanilla Panna Cotta</span>
+                              <div class="d-flex align-items-center">
+                                  <button class="btn btn-outline-danger btn-sm px-2" onclick="updateCartQuantity(this, -1)">−</button>
+                                  <span class="mx-2 cart-quantity">2</span>
+                                  <button class="btn btn-outline-success btn-sm px-2" onclick="updateCartQuantity(this, 1)">+</button>
+                              </div>
+                              <span class="cart-item-price">$13.00</span>
+                          </li>
+                      </ul>
+                      <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                          <h4>Total:</h4>
+                          <h4 class="text-success" id="cart-total">$46.50</h4>
                       </div>
+                      <button class="btn btn-success w-100 mt-3">Confirm Order</button>
+                  </div>
+                  
+                  
                   </div>
               </div>
           </div>
