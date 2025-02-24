@@ -1,13 +1,13 @@
 function increment(button) {
-    let quantitySpan = button.parentElement.querySelector('.quantity');
-    let currentQuantity = parseInt(quantitySpan.textContent, 10);
-    quantitySpan.textContent = currentQuantity + 1;
+    let quantityElement = button.parentElement.querySelector('.quantity');
+    let currentQuantity = parseInt(quantityElement.textContent);
+    quantityElement.textContent = currentQuantity + 1;
 }
 
 function decrement(button) {
-    let quantitySpan = button.parentElement.querySelector('.quantity');
-    let currentQuantity = parseInt(quantitySpan.textContent, 10);
+    let quantityElement = button.parentElement.querySelector('.quantity');
+    let currentQuantity = parseInt(quantityElement.textContent);
     if (currentQuantity > 1) {
-        quantitySpan.textContent = currentQuantity - 1;
+        quantityElement.textContent = currentQuantity - 1;
     }
 }
